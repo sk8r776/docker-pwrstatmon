@@ -105,6 +105,24 @@ do
 	loadwatt=`echo $loadwatt |awk {'print $1'}`
 	loadpercent=`echo $loadpercent |awk {'print $1'}`
 	
+	#Convert State to a 0 or a 1
+	# 1 = Normal
+	# 0 = Error
+	if [ "$state" = "Normal" ]; then
+		state=1
+	else
+		state=0
+	fi
+
+	#Convert Utility Power to a 0 or a 1
+	# 1 = Utility Power
+	# 0 = Battery
+	if [ "$supply" = "Utility Power" ]; then
+		supply=1
+	else
+		supply=0
+	fi
+
 	echo "$state"
 	echo "$supply"
 	echo "$involts"
