@@ -98,12 +98,12 @@ do
 	
 	#Now we just strip off some of the unneeded
 	#info from the end of the strings
-	involts=${involts::-2}
-	outvolts=${outvolts::-2}
-	runtime=${runtime::-4}
-	capacity=${capacity::-2}
-	loadwatt=${loadwatt::-5}
-	loadpercent=${loadpercent::-3}
+	involts=`echo $involts |awk {'print $1'}`
+	outvolts=`echo $outvolts |awk {'print $1'}`
+	runtime=`echo $runtime |awk {'print $1'}`
+	capacity=`echo $capacity |awk {'print $1'}`
+	loadwatt=`echo $loadwatt |awk {'print $1'}`
+	loadpercent=`echo $loadpercent |awk {'print $1'}`
 	
 	echo "$state"
 	echo "$supply"
